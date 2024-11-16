@@ -1,4 +1,13 @@
-package com.example.investmentmanager.data.local.model
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-class Investment {
-}
+@Entity(tableName = "investments")
+data class Investment(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val name: String,
+    val category: String,
+    val amount: Double,
+    val expectedProfit: Double,
+    val actualProfit: Double,
+    val status: String
+)
